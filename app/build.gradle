@@ -1,15 +1,13 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.preferences"
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdk 14
+        targetSdk 33
     }
 
     buildTypes {
@@ -18,8 +16,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    namespace 'com.example.project'
 
+    namespace 'com.example.project'
 }
 
 dependencies {
