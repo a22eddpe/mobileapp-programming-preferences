@@ -23,23 +23,22 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        text = findViewById(R.id.text1);
+        text = findViewById(R.id.textView1);
         preferences = getSharedPreferences("preferences", MODE_PRIVATE);
-        button = findViewById(R.id.brave);
+        button = findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.example.project.SecoundActivity.class);
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivity(intent);
             }
         });
 
     }
-
     @Override
     protected void onResume() {
         super.onResume();
-        String name = preferences.getString("name", "no name found");
+        String name = preferences.getString("name", getString(R.string.app_name));
         text.setText(name);
     }
 
